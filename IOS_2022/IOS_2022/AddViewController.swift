@@ -18,15 +18,19 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(didTapSaveButton))
 
     }
     
-    @IBAction func didTapSaveButton(){
+    @objc func didTapSaveButton(){
         if let titleText = titleField.text, !titleText.isEmpty,
            let docText = docField.text, !docText.isEmpty,
            let bodyText = bodyField.text, !bodyText.isEmpty{
             
             let targetDate = datePicker.date
+            
+            completion?(titleText, docText, bodyText, targetDate)
         }
     }
 

@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var table: UITableView!
-    var models = [MedTermin]()
+    var models = [MedAppointment]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,35 @@ class ViewController: UIViewController {
     
     @IBAction func didTapAdd(){
         // show add
+        guard let vc = storyboard?.instantiateViewController(identifier: "Add") as? AddViewController else{
+            return
+        }
+        
+        vc.title = "New Appointment"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.completion = {title, doc, body, date in
+            DispatchQueue.main.async {
+                self.navigationController?.popToRootViewController(animated: true)
+                let new = MedAppointment(title: title, date: date, identifier: "id_\(title)")
+                self.models.append(new)
+                self.table.reloadData()
+                
+                let content = UNMutableNotificationContent()
+                content.title = title
+                content.sound = .default
+                content.body = body
+                
+                let targetDate = date
+                let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
+                
+                let request = UNNotificationRequest(identifier: "ID", content: content, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in  if (error != nil) {
+                    print("Something went wrog")
+                }})
+                
+            }
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func didTapNotification(){
@@ -30,7 +59,7 @@ class ViewController: UIViewController {
                 //schedule notification
                 self.scheduleNotification()
             }
-            else if let error = error {
+            else if (error != nil) {
                 print("error occurred")
             }
         })
@@ -74,7 +103,7 @@ extension ViewController: UITableViewDataSource{
     }
 }
 
-struct MedTermin{
+struct MedAppointment{
     let title: String
     let date: Date
     let identifier: String

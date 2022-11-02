@@ -5,6 +5,7 @@
 //  Created by Ardit on 26.10.22.
 //
 
+import UserNotifications
 import UIKit
 
 class ViewController: UIViewController {
@@ -24,6 +25,30 @@ class ViewController: UIViewController {
     
     @IBAction func didTapNotification(){
         // show notification
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { success, error in
+            if success {
+                //schedule notification
+                self.scheduleNotification()
+            }
+            else if let error = error {
+                print("error occurred")
+            }
+        })
+    }
+    
+    func scheduleNotification(){
+        let content = UNMutableNotificationContent()
+        content.title = "Termini i caktuar"
+        content.sound = .default
+        content.body = "Termini i caktuar per diten e sotme. MOS HARRONI KENI TERMIN SOT!!!!"
+        
+        let targetDate = Date().addingTimeInterval(15)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "ID", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in  if (error != nil) {
+            print("Something went wrog")
+        }})
     }
 
 }

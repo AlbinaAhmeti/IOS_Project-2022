@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qpy-Gq-jl6">
-                                <rect key="frame" x="0.0" y="143" width="390" height="187"/>
+                                <rect key="frame" x="0.0" y="143" width="390" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -25,6 +25,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Qpy-Gq-jl6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FYe-eE-tDU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qpy-Gq-jl6" secondAttribute="bottom" id="J2a-yA-hyq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qpy-Gq-jl6" secondAttribute="bottom" id="VYd-Fw-Lrr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qpy-Gq-jl6" secondAttribute="bottom" constant="480" id="iQp-4f-wga"/>
                             <constraint firstItem="Qpy-Gq-jl6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oOd-tg-qEt"/>
@@ -32,8 +33,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Termine" id="H6f-q1-VVt">
-                        <barButtonItem key="leftBarButtonItem" title="Njoftime" id="QTI-tV-WKr"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tj3-Lp-wqY"/>
+                        <barButtonItem key="leftBarButtonItem" title="Notification" id="QTI-tV-WKr">
+                            <connections>
+                                <action selector="didTapNotification" destination="BYZ-38-t0r" id="DpR-t1-Yzh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tj3-Lp-wqY">
+                            <connections>
+                                <action selector="didTapAdd" destination="BYZ-38-t0r" id="ydq-Ib-t20"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="table" destination="Qpy-Gq-jl6" id="GEg-85-xg6"/>

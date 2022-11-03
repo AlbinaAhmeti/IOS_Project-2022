@@ -96,7 +96,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Appointment..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opf-sW-TOL">
-                                <rect key="frame" x="20" y="442" width="350" height="55"/>
+                                <rect key="frame" x="20" y="337" width="350" height="55"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="xdm-FI-0hk"/>
@@ -105,7 +105,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3VG-3K-M8M">
-                                <rect key="frame" x="20" y="557" width="350" height="55"/>
+                                <rect key="frame" x="20" y="452" width="350" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="RdH-2a-tmS"/>
                                 </constraints>
@@ -119,27 +119,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Doctor Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HI8-6n-jxx">
-                                <rect key="frame" x="20" y="337" width="350" height="55"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="rff-xt-wgw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eXI-wB-aG3"/>
                         <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eXI-wB-aG3" firstAttribute="trailing" secondItem="HI8-6n-jxx" secondAttribute="trailing" constant="20" id="AhG-4B-aOu"/>
                             <constraint firstItem="eXI-wB-aG3" firstAttribute="trailing" secondItem="opf-sW-TOL" secondAttribute="trailing" constant="20" id="IfC-kw-Gg1"/>
                             <constraint firstItem="H3C-j5-4uA" firstAttribute="top" secondItem="MnN-uH-ief" secondAttribute="bottom" constant="50" id="Jwe-xO-ZZK"/>
-                            <constraint firstItem="HI8-6n-jxx" firstAttribute="leading" secondItem="eXI-wB-aG3" secondAttribute="leading" constant="20" id="Wj5-fC-wJF"/>
+                            <constraint firstItem="opf-sW-TOL" firstAttribute="top" secondItem="H3C-j5-4uA" secondAttribute="bottom" constant="50" id="Xq4-In-9nr"/>
                             <constraint firstItem="MnN-uH-ief" firstAttribute="leading" secondItem="eXI-wB-aG3" secondAttribute="leading" constant="20" id="bny-Pk-lbm"/>
-                            <constraint firstItem="opf-sW-TOL" firstAttribute="top" secondItem="HI8-6n-jxx" secondAttribute="bottom" constant="50" id="cnQ-vQ-cDD"/>
                             <constraint firstItem="H3C-j5-4uA" firstAttribute="leading" secondItem="eXI-wB-aG3" secondAttribute="leading" constant="20" id="f4u-HJ-z73"/>
-                            <constraint firstItem="HI8-6n-jxx" firstAttribute="top" secondItem="H3C-j5-4uA" secondAttribute="bottom" constant="50" id="kBc-o0-U43"/>
                             <constraint firstItem="eXI-wB-aG3" firstAttribute="trailing" secondItem="H3C-j5-4uA" secondAttribute="trailing" constant="20" id="kGM-mf-u5a"/>
                             <constraint firstItem="eXI-wB-aG3" firstAttribute="trailing" secondItem="3VG-3K-M8M" secondAttribute="trailing" constant="20" id="mfg-rS-St7"/>
                             <constraint firstItem="MnN-uH-ief" firstAttribute="top" secondItem="eXI-wB-aG3" secondAttribute="top" constant="80" id="nwa-UJ-KcE"/>
@@ -153,7 +141,6 @@
                     <connections>
                         <outlet property="bodyField" destination="opf-sW-TOL" id="9MI-fg-hbr"/>
                         <outlet property="datePicker" destination="3VG-3K-M8M" id="jIh-sO-34Z"/>
-                        <outlet property="docField" destination="HI8-6n-jxx" id="TLn-i4-Wx9"/>
                         <outlet property="titleField" destination="H3C-j5-4uA" id="OaM-dm-4is"/>
                     </connections>
                 </viewController>

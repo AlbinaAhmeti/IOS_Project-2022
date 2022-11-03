@@ -21,13 +21,13 @@ class ViewController: UIViewController {
     
     @IBAction func didTapAdd(){
         // show add
-        guard let vc = storyboard?.instantiateViewController(identifier: "Add") as? AddViewController else{
+        guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else{
             return
         }
         
         vc.title = "New Appointment"
         vc.navigationItem.largeTitleDisplayMode = .never
-        vc.completion = {title, doc, body, date in
+        vc.completion = {title, body, date in
             DispatchQueue.main.async {
                 self.navigationController?.popToRootViewController(animated: true)
                 let new = MedAppointment(title: title, date: date, identifier: "id_\(title)")
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
                 
                 let request = UNNotificationRequest(identifier: "ID", content: content, trigger: trigger)
                 UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in  if (error != nil) {
-                    print("Something went wrog")
+                    print("Something went wrong")
                 }})
                 
             }
@@ -97,8 +97,15 @@ extension ViewController: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: IndexPath())
-        cell.textLabel?.text = models[IndexPath().row].title
-        
+        cell.textLabel?.text = models[indexPath.row].title
+        let date = models[indexPath.row].date
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM, dd, YYYY"
+        cell.detailTextLabel?.text = formatter.string(from: date)
+
+        cell.textLabel?.font = UIFont(name: "Arial", size: 25)
+        cell.detailTextLabel?.font = UIFont(name: "Arial", size: 22)
         return cell
     }
 }

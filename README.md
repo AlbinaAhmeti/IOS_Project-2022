@@ -4,6 +4,6 @@ APP: IOS_2022
 
 Appointment
 
-Projekti ne lenden Programimi i paisjeve mobile eshte rreth kujtimeve te termineve per te moshuarit.
-Kjo ide eshte per arsye se te moshuarit shpesh here harrojn rreth termineve qe kane per kontroll tek mjeku, ku ky app ja dergon nje notification ne daten qe e ka terminin ne nje ore qe e cakton.
+The project in the field of Mobile Device Programming is about doctor's appointments to remind the elderly.
+This idea is due to the fact that the elderly often forget about the appointments they have to check with the doctor, where this app sends a notification on the date that the appointment is at an hour that it sets.
  

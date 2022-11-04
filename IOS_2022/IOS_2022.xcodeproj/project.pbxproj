@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B3E1B2329159750007DAEAA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3E1B2229159750007DAEAA /* libsqlite3.tbd */; };
+		1B3E1B252915976A007DAEAA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3E1B242915976A007DAEAA /* libsqlite3.tbd */; };
 		1B598D482909B90F00C19657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B598D472909B90F00C19657 /* AppDelegate.swift */; };
 		1B598D4A2909B90F00C19657 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B598D492909B90F00C19657 /* SceneDelegate.swift */; };
 		1B598D4C2909B90F00C19657 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B598D4B2909B90F00C19657 /* ViewController.swift */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B3E1B2229159750007DAEAA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1B3E1B242915976A007DAEAA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1B3E1B26291597DC007DAEAA /* IOS_2022-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOS_2022-Bridging-Header.h"; sourceTree = "<group>"; };
 		1B598D442909B90F00C19657 /* IOS_2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B598D472909B90F00C19657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B598D492909B90F00C19657 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,17 +38,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B3E1B252915976A007DAEAA /* libsqlite3.tbd in Frameworks */,
+				1B3E1B2329159750007DAEAA /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B3E1B212915974E007DAEAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B3E1B2229159750007DAEAA /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1B598D3B2909B90F00C19657 = {
 			isa = PBXGroup;
 			children = (
 				1B598D462909B90F00C19657 /* IOS_2022 */,
 				1B598D452909B90F00C19657 /* Products */,
+				1B3E1B212915974E007DAEAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +82,8 @@
 				1B598D522909B91400C19657 /* LaunchScreen.storyboard */,
 				1B598D552909B91400C19657 /* Info.plist */,
 				1B9072B729130C940083B5BD /* AddViewController.swift */,
+				1B3E1B242915976A007DAEAA /* libsqlite3.tbd */,
+				1B3E1B26291597DC007DAEAA /* IOS_2022-Bridging-Header.h */,
 			);
 			path = IOS_2022;
 			sourceTree = "<group>";
@@ -102,6 +120,7 @@
 				TargetAttributes = {
 					1B598D432909B90F00C19657 = {
 						CreatedOnToolsVersion = 14.0;
+						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -289,6 +308,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -306,6 +326,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IOS-2022";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "IOS_2022/IOS_2022-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -316,6 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -333,6 +356,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IOS-2022";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "IOS_2022/IOS_2022-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

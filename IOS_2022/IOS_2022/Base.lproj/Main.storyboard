@@ -60,6 +60,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Appointment" id="H6f-q1-VVt">
                         <barButtonItem key="leftBarButtonItem" title="Notification" id="QTI-tV-WKr">
+                            <color key="tintColor" systemColor="systemBackgroundColor"/>
                             <connections>
                                 <action selector="didTapNotification" destination="BYZ-38-t0r" id="DpR-t1-Yzh"/>
                             </connections>

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  IOS_2022
 //
-//  Created by Ardit on 26.10.22.
+//  Created by Albina on 26.10.22.
 //
 
 import UIKit
